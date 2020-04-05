@@ -8,6 +8,8 @@ import { MatSliderModule } from '@angular/material/slider';
 import { NavbarComponent } from './navbar/navbar.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
+import { NovelCovidService } from './shared/service/novel-covid.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,8 +23,9 @@ import {MatButtonModule} from '@angular/material/button';
     MatSliderModule,
     MatToolbarModule,
     MatButtonModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [NovelCovidService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
