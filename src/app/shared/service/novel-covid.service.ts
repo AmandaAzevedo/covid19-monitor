@@ -27,5 +27,7 @@ export class NovelCovidService {
         return this.http.get<GlobalInfo>(uri);
     }
 
+    
+
 
 }
