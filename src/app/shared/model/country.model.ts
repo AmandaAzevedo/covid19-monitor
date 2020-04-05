@@ -1,4 +1,4 @@
-import { CountryInfo } from './model/country-Info.model';
+import { CountryInfo } from './country-Info.model';
 
 export class Country {
 

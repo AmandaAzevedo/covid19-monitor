@@ -12,9 +12,11 @@ export class AppComponent {
   title = 'covid19-monitor';
 
   ngOnInit(): void {
-    this.sevice.getAllCountry().subscribe(result => { });
+    this.service.getAllCountry().subscribe(result => { });
+    this.service.getGlobalInfo().subscribe(result=>{console.log(result)});
+   
   }
 
-  constructor(private sevice: NovelCovidService) { }
+  constructor(private service: NovelCovidService) { }
 
 }
