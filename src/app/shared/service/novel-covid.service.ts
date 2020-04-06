@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from "@angular/common/http";
 import { Observable } from 'rxjs';
-import { Country } from '../model/country.model';
+import { Country, Countries } from '../model/country.model';
 import { GlobalInfo } from '../model/global-info.model';
 
 @Injectable({
@@ -27,7 +27,11 @@ export class NovelCovidService {
         return this.http.get<GlobalInfo>(uri);
     }
 
-    
+    getCountryByIso3(iso3: Countries):Observable<Country>{
+        let uri: string = this.NOVEL_COVID_API_URL + 'countries/' + iso3;
+        return this.http.get<Country>(uri);
+    }
+
 
 
 }
