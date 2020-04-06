@@ -16,6 +16,7 @@ export class AppComponent {
     this.service.getAllCountry().subscribe(result => { });
     this.service.getGlobalInfo().subscribe(result=>{});
     this.service.getCountryByIso3(Countries.Brazil).subscribe(result=>{});
+    this.service.getAllInfosToMap().subscribe(result=>{});
    
   }
 

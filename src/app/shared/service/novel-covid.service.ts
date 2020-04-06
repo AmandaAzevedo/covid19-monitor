@@ -3,6 +3,7 @@ import { HttpClient, HttpParams } from "@angular/common/http";
 import { Observable } from 'rxjs';
 import { Country, Countries } from '../model/country.model';
 import { GlobalInfo } from '../model/global-info.model';
+import { InfosToMap } from '../model/infos-to-map.model';
 
 @Injectable({
     providedIn: 'root'
@@ -27,11 +28,15 @@ export class NovelCovidService {
         return this.http.get<GlobalInfo>(uri);
     }
 
-    getCountryByIso3(iso3: Countries):Observable<Country>{
+    getCountryByIso3(iso3: Countries): Observable<Country> {
         let uri: string = this.NOVEL_COVID_API_URL + 'countries/' + iso3;
         return this.http.get<Country>(uri);
     }
 
+    getAllInfosToMap(): Observable<InfosToMap> {
+        let uri: string = this.NOVEL_COVID_API_URL + 'v2/jhucsse';
+        return this.http.get<InfosToMap>(uri);
 
+    }
 
 }
