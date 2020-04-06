@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Country, Countries } from '../model/country.model';
 import { GlobalInfo } from '../model/global-info.model';
 import { InfosToMap } from '../model/infos-to-map.model';
+import { HistoricalDate } from '../model/historical-date.model';
 
 @Injectable({
     providedIn: 'root'
@@ -36,7 +37,11 @@ export class NovelCovidService {
     getAllInfosToMap(): Observable<InfosToMap> {
         let uri: string = this.NOVEL_COVID_API_URL + 'v2/jhucsse';
         return this.http.get<InfosToMap>(uri);
+    }
 
+    getAllHistoricalDate(): Observable<Array<HistoricalDate>>{
+        let uri: string = this.NOVEL_COVID_API_URL + 'v2/historical';
+        return this.http.get<Array<HistoricalDate>>(uri);
     }
 
 }

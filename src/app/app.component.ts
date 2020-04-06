@@ -17,6 +17,7 @@ export class AppComponent {
     this.service.getGlobalInfo().subscribe(result=>{});
     this.service.getCountryByIso3(Countries.Brazil).subscribe(result=>{});
     this.service.getAllInfosToMap().subscribe(result=>{});
+    this.service.getAllHistoricalDate().subscribe(result=>{console.log(result)});
    
   }
 
