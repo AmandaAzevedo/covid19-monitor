@@ -10,6 +10,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import { NovelCovidService } from './shared/service/novel-covid.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ChartsModule } from 'ng2-charts'
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatToolbarModule,
     MatButtonModule,
     HttpClientModule,
+    ChartsModule
   ],
   providers: [NovelCovidService],
   bootstrap: [AppComponent]
