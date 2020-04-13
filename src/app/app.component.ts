@@ -11,6 +11,17 @@ import { Countries } from './shared/model/country.model';
 })
 export class AppComponent {
   title = 'covid19-monitor';
+  public barChartOptions = {
+    scaleShowVerticalLines: false,
+    responsive: true,
+  }
+  public barChartLabels = [ '2006', '2007', '2008', '2009', '2010', '2011', '2012'];
+  public barChartType = 'bar';
+  public barChartLegend = true;
+  public barChartData = [
+    {data: [65, 59, 80, 81, 56, 55, 40, 10], label:'Series A'},
+    {data: [25, 40, 65, 90, 65, 60, 20, 15], label:'Series B'},
+  ]
 
   ngOnInit(): void {
     this.service.getAllCountry().subscribe(result => { });
